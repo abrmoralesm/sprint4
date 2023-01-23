@@ -7,11 +7,16 @@ function getAllDirectors(array) {
 
 // Exercise 2: Get the films of a certain director
 function getMoviesFromDirector(array, director) {
+  const result = array.filter(jar=>jar.director===director);
+  console.log("EXERCICE 2 ->", result);
+  return result;
+} 
  
-}
-
 // Exercise 3: Calculate the average of the films of a given director.
 function moviesAverageOfDirector(array, director) {
+  let pelis = array.filter(jar => jar.director == director);
+  let averageScore = pelis.reduce((total,next) => total + next.score,0) / pelis.length;
+  return averageScore;
   
 }
 
