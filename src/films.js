@@ -30,7 +30,7 @@ function orderAlphabetically(array) {
 // Exercise 5: Order by year, ascending
 function orderByYear(array) {
   let sorted = array
-    .map((item) => item)
+    .map((jar) => jar)
     .sort((a, b) => (a.title > b.title ? 1 : b.title > a.title ? -1 : 0));
   sorted.sort((a, b) => a.year - b.year);
   return sorted;
