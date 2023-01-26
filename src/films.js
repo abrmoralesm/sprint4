@@ -14,7 +14,7 @@ function getMoviesFromDirector(array, director) {
 function moviesAverageOfDirector(array, director) {
   let pelis = array.filter((jar) => jar.director == director);
   let averageScore =
-    pelis.reduce((total, next) => total + next.score, 0) / pelis.length;
+      pelis.reduce((total, next) => total + next.score, 0) / pelis.length;
   return averageScore;
 }
 
