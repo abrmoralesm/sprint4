@@ -37,10 +37,37 @@ function orderByYear(array) {
 }
 
 // Exercise 6: Calculate the average of the movies in a category
-function moviesAverageByCategory() {}
+function moviesAverageByCategory(array, genre) {
+  let sortCat = array.map(film => film).filter(jar => jar.genre == genre).filter(jarScore => jarScore.score > 0);
+  let average = sortCat.reduce((total, prox) => total + prox.score, 0) / sortCat.length;
+  return average;
+}
 
 // Exercise 7: Modify the duration of movies to minutes
-function hoursToMinutes() {}
+function hoursToMinutes(array) {
+  let hours = 0,
+    min = 0,
+    newDuracion;
+
+  let movieList = array.map(function (film) {
+    newDuracion = film.duration.split(" ");
+    hours = parseInt(newDuracion[0]);
+    min = parseInt(newDuracion[1]);
+    if (newDuracion.length == 1) {
+      min = 0;
+    }
+    let result = hours * 60 + min;
+
+    return {
+      ...film,
+      duration: result,
+    };
+
+  });
+
+  return movieList;
+
+}
 
 // Exercise 8: Get the best film of a year
 function bestFilmOfYear() {}
