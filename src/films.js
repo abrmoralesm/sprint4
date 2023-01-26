@@ -1,14 +1,12 @@
 // Exercise 1: Get the array of all directors.
 function getAllDirectors(array) {
   const result = array.map((jar) => jar.director);
-  console.log('EXERCICE 1 ->', result);
   return result;
 }
 
 // Exercise 2: Get the films of a certain director
 function getMoviesFromDirector(array, director) {
   const result = array.filter((jar) => jar.director === director);
-  console.log('EXERCICE 2 ->', result);
   return result;
 }
 
@@ -70,7 +68,12 @@ function hoursToMinutes(array) {
 }
 
 // Exercise 8: Get the best film of a year
-function bestFilmOfYear() {}
+function bestFilmOfYear(array, year) {
+  const bestFilm = [array.filter(jar => jar.year === year).sort((pre, now) => pre.score + now.score)[0]];
+
+  return bestFilm;
+
+}
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
